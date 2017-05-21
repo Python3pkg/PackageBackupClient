@@ -62,7 +62,7 @@ def _render_prompt(id_, do_space, label_text, is_required, default_value,
             _out.write(' ')
 
         try:
-            answer = raw_input(prompt).strip()
+            answer = input(prompt).strip()
         except EOFError:
             """The user aborted the prompt (CTRL+D under Linux)."""
             _out.write('\n')
@@ -95,7 +95,7 @@ def text_prompts(prompts):
     responses = {}
     j = 0
     do_space = False
-    for id_, spec in prompts.items():
+    for id_, spec in list(prompts.items()):
         if len(spec) == 5:
             (with_nl, answer) = _render_prompt(id_, do_space, *spec)
         else:

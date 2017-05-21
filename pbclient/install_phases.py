@@ -81,7 +81,7 @@ class _CrontabConfig(object):
         except LookupError:
             pass
         else:
-            print("Removing existing crontab job: %s" % (self.__comment))
+            print(("Removing existing crontab job: %s" % (self.__comment)))
 
             self.__cron.remove(job)
             self.__cron.write()
@@ -90,8 +90,8 @@ class _CrontabConfig(object):
         self.clear_existing()
 
         pushtool_filepath = _get_full_filepath(_TOOL_PUSHLIST_FILENAME)
-        print("Installing tool [%s] as crontab job [%s]." % 
-              (pushtool_filepath, self.__comment))
+        print(("Installing tool [%s] as crontab job [%s]." % 
+              (pushtool_filepath, self.__comment)))
 
         job = self.__cron.new(command=pushtool_filepath)
         

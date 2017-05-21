@@ -1,6 +1,6 @@
 from os import lstat, listdir
 from os.path import isdir
-from Queue import Queue
+from queue import Queue
 
 FS_IDX_FILEPATH = 0
 FS_IDX_MTIME = 1

@@ -1,6 +1,6 @@
 from os.path import islink, isdir, abspath
 from os import lstat
-from cStringIO import StringIO
+from io import StringIO
 from struct import pack, unpack
 
 from pbclient.fs.general import walk_with_empty, FS_IDX_FILEPATH, \

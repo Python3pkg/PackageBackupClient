@@ -21,7 +21,7 @@ def _get_physical_path(fq_module_spec):
         module_filename = ('%s.py' % (filename_root))
         module_filepath = join(module_path, module_filename)
 
-    print("Module [%s] refers to: %s" % (fq_module_spec, module_filepath))
+    print(("Module [%s] refers to: %s" % (fq_module_spec, module_filepath)))
     return module_filepath
 
 def _install_tool_symlink(fq_module_spec, deposit_path_rel):
@@ -33,8 +33,8 @@ def _install_tool_symlink(fq_module_spec, deposit_path_rel):
     deposit_path = join(_default_prefix, deposit_path_rel)
     deposit_filepath = join(deposit_path, filename_noext)
 
-    print("Creating executable symlink at [%s] with target [%s]." % 
-          (deposit_file_path, module_filepath))
+    print(("Creating executable symlink at [%s] with target [%s]." % 
+          (deposit_file_path, module_filepath)))
 
     # If it already exists, kill it.
     if exists(deposit_filepath) is True:

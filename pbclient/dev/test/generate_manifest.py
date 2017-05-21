@@ -16,6 +16,6 @@ manifest_data = get_manifest_from_path(path)
 with file(manifest_filepath, 'wb') as f:
     f.write(manifest_data)
 
-print("Wrote (%d) bytes to manifest." % 
-      (len(manifest_data)))
+print(("Wrote (%d) bytes to manifest." % 
+      (len(manifest_data))))
 

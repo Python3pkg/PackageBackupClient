@@ -90,7 +90,7 @@ class Prefs(object):
             raise Exception("One or more required prefs were omitted: %s" % 
                             ((required - given),))
 
-        for k, v in values.items():
+        for k, v in list(values.items()):
             self.set(k, v)
 
     def set(self, key, value):

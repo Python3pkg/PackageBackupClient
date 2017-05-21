@@ -169,11 +169,11 @@ class Prefs(object):
                                   False,
                                   can_truncate)) 
                               for (id_, (label_text, is_required, can_truncate)) 
-                              in _prompt_info.items() ])
+                              in list(_prompt_info.items()) ])
 
         responses = text_prompts(prompts)
         
-        for k, v in _default_prefs.items():
+        for k, v in list(_default_prefs.items()):
             if k not in responses:
                 responses[k] = v
         
